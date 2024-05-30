@@ -28,5 +28,15 @@
         }
       ]
     }
+  ],
+  "crons": [
+    {
+      "path": "/api/cron/reviews.js",
+      "schedule": "*/10 * * * *"
+    },
+    {
+      "path": "/api/cron/weeklyGames.js",
+      "schedule": "0 17 * * 4"
+    }
   ]
 }

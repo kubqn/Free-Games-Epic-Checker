@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Execute reviews task
-        run: curl -X GET https://egc-hecker-server.vercel.app/api/cron/reviews.js
+        run: curl -X GET https://egc-hecker-server-kubqn-kubqns-projects.vercel.app/api/cron/reviews.js
 
       - name: Execute weekly task
-        run: curl -X GET https://egc-hecker-server.vercel.app/api/cron/weeklyGames.js
+        run: curl -X GET https://egc-hecker-server-kubqn-kubqns-projects.vercel.app/api/cron/weeklyGames.js

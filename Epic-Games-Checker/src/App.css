@@ -1,0 +1,200 @@
+:root {
+  --color-gradient-start: #3a506b;
+  --color-gradient-end: #5bc0be;
+  --onPromotion: #4a90e2;
+  --comingSoon: #e94e77;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(
+    135deg,
+    var(--color-gradient-start),
+    var(--color-gradient-end)
+  );
+  color: var(--color-500);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  overflow-x: hidden;
+}
+
+.header {
+  text-align: center;
+  padding-bottom: 2rem;
+  font-size: 2.5rem;
+  margin-top: 1rem;
+}
+
+.gameObject {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.gameObject > div {
+  background: #2a3d55;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  max-width: 90vw;
+}
+
+.gameObject > div:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.imgPreview {
+  height: 250px;
+  width: 250px;
+  border: 3px solid #000000;
+  border-radius: 25%;
+  transition: all 0.5s;
+  margin: 20px auto;
+  box-shadow: 0 0 0 3px #000000;
+  object-fit: cover;
+}
+
+.gameObject > div > p {
+  font-weight: 700;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.onPromotion .imgPreview {
+  outline: 10px solid var(--onPromotion);
+}
+
+.comingSoon .imgPreview {
+  outline: 10px solid var(--comingSoon);
+}
+
+.onPromotionText,
+.gamePrice {
+  font-size: 1.2rem;
+}
+
+.onPromotionText {
+  margin-bottom: 10px;
+}
+
+button {
+  margin-top: 10px;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+}
+
+.allow-notifications {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+.notification-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  gap: 3rem;
+  margin: 0 auto;
+}
+
+.notification-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.notificationMessage > h1 {
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem 0;
+  border-bottom: 3px solid var(--color-500);
+}
+
+/* Media Queries for Mobile */
+
+@media (max-width: 768px) {
+  .header {
+    font-size: 2rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .gameObject {
+    gap: 1.5rem;
+    padding: 0.5rem;
+  }
+
+  .gameObject > div {
+    padding: 0.5rem;
+  }
+
+  .imgPreview {
+    height: 200px;
+    width: 200px;
+    margin: 10px auto;
+  }
+
+  .onPromotionText,
+  .gamePrice {
+    font-size: 1rem;
+  }
+
+  .notification-container {
+    width: 60%;
+    gap: 1.5rem;
+    justify-content: center;
+    place-content: center;
+    align-items: center;
+  }
+
+  .allowNotifications {
+    font-size: 2rem;
+    margin: 1rem 0 2rem 0;
+    text-align: center;
+  }
+
+  .notificationMessage > h1 {
+    margin: auto auto 1rem auto;
+  }
+
+  .notificationMessage {
+    max-width: 349px;
+    margin: auto;
+  }
+
+  .notification-container {
+    display: block;
+    width: 75%;
+    gap: 1rem;
+    margin: 0 auto;
+  }
+
+  .notification-image {
+    margin: 1rem 0 0.5rem 0;
+  }
+  .notification-image > img {
+    display: flex;
+    place-content: center;
+    align-items: center;
+    max-width: 100%;
+  }
+}
+@media (max-width: 460px) {
+  .header {
+    font-size: 2rem;
+    padding-bottom: 1.5rem;
+  }
+}

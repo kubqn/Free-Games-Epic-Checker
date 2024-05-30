@@ -1,0 +1,467 @@
+:root {
+  --color-100: #0b132b;
+  --color-200: #1c2541;
+  --color-300: #3a506b;
+  --color-400: #5bc0be;
+  --color-500: #ffffff;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-400);
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-500);
+}
+
+/*--------------------------------------------------------Modal--------------------------------------------------------*/
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: var(--color-300);
+  width: 80%;
+  max-width: 900px;
+  height: 80%;
+  max-height: 750px;
+  position: relative;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  overflow: auto;
+}
+
+.modalCloseBtn {
+  all: unset;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: var(--color-500);
+  font-size: 1.5rem;
+}
+
+.modalCloseBtn:hover {
+  transform: scale(1.2);
+}
+
+.modal-open {
+  animation-name: scaleIn;
+}
+
+.modal-close {
+  animation-name: scaleOut;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+}
+
+/*--------------------------------------------------------Game Details--------------------------------------------------------*/
+.containerInfo {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+  gap: 2rem;
+}
+
+.containerInfo > * {
+  flex: 1;
+}
+
+.imgInfo {
+  max-width: 100%;
+  border: 3px solid var(--color-100);
+}
+
+.titleInfo {
+  margin-top: 30px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.tab-content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.longDescription {
+  overflow-y: auto;
+  height: 236px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.gameDetailsInfo {
+  background-color: var(--color-100);
+  width: 90%;
+  border: 3px solid var(--color-400);
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+
+.gameDetailsInfo > p {
+  margin-top: 10px;
+}
+.gameDetailsInfo > ul {
+  display: flex;
+  place-content: center;
+  list-style-type: none;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.screenshots img {
+  width: 10%;
+}
+
+.gameDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/*--------------------------------------------------------Video--------------------------------------------------------*/
+.videos {
+  padding: 2rem;
+}
+
+.videos > h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--color-500);
+}
+
+.video-item {
+  text-align: center;
+  margin-bottom: 2rem;
+  transition: box-shadow 0.3s;
+  padding: 1rem;
+  background-color: var(--color-100);
+}
+
+.video-item:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.video-item p {
+  color: var(--color-400);
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.video {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/*--------------------------------------------------------Reviews--------------------------------------------------------*/
+.reviews {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.reviewBox {
+  border: 2px solid #ccc;
+  max-width: 400px;
+  width: fit-content;
+  background-color: var(--color-200);
+  margin: 20px;
+  overflow: auto;
+}
+
+.reviewBox > p {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.logo {
+  width: 30%;
+  margin: 20px auto;
+  display: block;
+}
+
+.userReview {
+  border: 3px solid black;
+  border-radius: 10px;
+  width: 80%;
+  margin: 0 auto 30px;
+  background-color: #0b132b;
+  overflow-y: auto;
+}
+
+.recentReview {
+  background-color: var(--color-100);
+}
+
+/*--------------------------------------------------------Stars--------------------------------------------------------*/
+.totalGameRating {
+  position: absolute;
+  bottom: 20%;
+}
+
+.stars {
+  text-align: center;
+  padding-top: 20px;
+}
+
+/*--------------------------------------------------------Tabs--------------------------------------------------------*/
+.tabs {
+  height: 100%;
+}
+.tab-list {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.tab {
+  font-size: 1.5rem;
+  color: var(--color-400);
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.tab:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--color-500);
+}
+
+.active {
+  background-color: var(--color-400);
+  color: var(--color-500);
+}
+
+.hamburger {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal-content {
+    animation: none;
+  }
+  .tab {
+    transition: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%;
+    height: 80%;
+    border-radius: 0px;
+  }
+
+  .titleInfo {
+    font-size: 1.5rem;
+  }
+
+  .tab {
+    font-size: 1.2rem;
+  }
+
+  .longDescription {
+    height: 150px;
+  }
+
+  .gameDetailsInfo {
+    width: 100%;
+    padding: 0.5rem;
+  }
+  .gameDetailsInfo > * {
+    margin: 10px auto auto 10px;
+  }
+
+  .gameDetailsRating {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .screenshots img {
+    width: 20%;
+  }
+
+  .modalCloseBtn {
+    font-size: 1.2rem;
+  }
+  .reviews {
+    display: block;
+    width: 400px;
+    margin: 0 auto 0 auto;
+  }
+
+  .reviewBox > p {
+    margin-bottom: 20px;
+  }
+  .reviewBox {
+    padding: 0.75rem;
+  }
+
+  .reviewBox .logo {
+    max-width: 150px;
+  }
+
+  .stars {
+    padding-top: 0px;
+  }
+
+  .containerInfo {
+    display: block;
+  }
+  .imgInfo {
+    width: 100%;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-10%);
+    }
+  }
+
+  .tab-list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background: var(--color-300);
+    top: 40px;
+    left: 0;
+    width: 100%;
+    margin: 0px;
+    gap: 0;
+    z-index: 999;
+    transition: background-color 0.3s, color 0.3s;
+    opacity: 0;
+  }
+
+  .tab-list.open {
+    display: flex;
+    animation: slideDown 0.5s forwards;
+  }
+
+  .tab-list.closing {
+    animation: slideUp 0.5s forwards;
+  }
+
+  .tab {
+    border-radius: 0px;
+  }
+
+  .hamburger {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .icon {
+    position: absolute;
+    transition: opacity 0.5s ease;
+  }
+
+  .icon.show {
+    opacity: 1;
+  }
+
+  .icon.hide {
+    opacity: 0;
+  }
+  .video {
+    display: block;
+    width: 100%;
+  }
+  .video-item > p {
+    padding: 20px 0 20px 0;
+  }
+  ::-webkit-scrollbar {
+    width: 3px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+  }
+  .longDescription::-webkit-scrollbar-thumb {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+}
+@media (max-width: 460px) {
+  .reviews {
+    width: 300px;
+  }
+  .reviewBox > p {
+    width: 100%;
+  }
+  .reviewBox {
+    padding: 0.5rem;
+  }
+}
